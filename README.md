@@ -4,9 +4,9 @@ Este projeto automatiza a consulta de proprietario no portal da Prefeitura de Sa
 
 ## Requisitos
 
-- macOS, Linux ou Windows com `make` instalado
 - Python 3
 - Google Chrome instalado
+- Opcional: `make` (apenas para macOS/Linux ou quem preferir usar Makefile)
 
 ## Instalar make
 
@@ -40,6 +40,30 @@ choco install make
 
 - `iptu - Copia.py`: script principal de automacao
 - `Makefile`: comandos para preparar ambiente, instalar dependencias e executar
+- `setup_windows.bat`: prepara ambiente no Windows sem `make`
+- `run_windows.bat`: executa o sistema no Windows sem IDE
+
+## Uso rapido no Windows (sem IDE)
+
+1. Abra o Prompt de Comando (cmd).
+2. Entre na pasta do projeto.
+3. Execute o setup:
+
+```bat
+setup_windows.bat
+```
+
+4. Coloque o arquivo `dados_extraidos.xlsx` na raiz do projeto.
+5. Execute:
+
+```bat
+run_windows.bat
+```
+
+Tambem funciona com duplo clique:
+
+- primeiro em `setup_windows.bat`
+- depois em `run_windows.bat`
 
 ## Como usar
 
@@ -87,9 +111,10 @@ make run
 ## Problemas comuns
 
 - Erro de dependencia faltando:
-  - Rode `make setup` novamente.
+  - No Windows: rode `setup_windows.bat` novamente.
+  - Em macOS/Linux: rode `make setup` novamente.
 - Erro de navegador/ChromeDriver:
-  - Feche janelas antigas do Chrome e rode `make run` outra vez.
+  - Feche janelas antigas do Chrome e rode `run_windows.bat` (Windows) ou `make run` (macOS/Linux).
 - Arquivo de entrada nao encontrado:
   - Verifique se `dados_extraidos.xlsx` esta na raiz do projeto.
 # SistemaMbras
